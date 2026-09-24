@@ -1,0 +1,17 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.accItem + .accItem {
+  border-top: 1px solid var(--border);
+}
+
+.accText {
+  line-height: 1.65;
+  color: var(--text-secondary);
+}

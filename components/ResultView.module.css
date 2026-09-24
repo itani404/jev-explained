@@ -1,0 +1,188 @@
+.headline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.key {
+  color: var(--text-secondary);
+}
+
+.arrow {
+  color: var(--text-tertiary);
+}
+
+.value {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr) 44px;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.rowActive {
+  color: var(--text-primary);
+}
+
+.rowLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowValue {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--text-tertiary);
+  transition: width 400ms ease;
+  animation: growWidth 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.row:nth-child(2) .fill {
+  animation-delay: 60ms;
+}
+
+.row:nth-child(3) .fill {
+  animation-delay: 120ms;
+}
+
+.row:nth-child(n + 4) .fill {
+  animation-delay: 180ms;
+}
+
+@keyframes growWidth {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes slideMarker {
+  from {
+    left: 0;
+  }
+}
+
+.rowActive .fill {
+  background: var(--accent);
+}
+
+.ladder {
+  margin-bottom: 24px;
+}
+
+.ladderTrack {
+  position: relative;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--track), var(--accent-soft));
+}
+
+.marker {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--accent);
+  transform: translate(-50%, -50%);
+  transition: left 400ms ease;
+  animation: slideMarker 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.ladderTicks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.meter {
+  height: 12px;
+  border-radius: 999px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.meterYes {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width 400ms ease;
+  animation: growWidth 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.meterLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.criteria {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr) 44px;
+    grid-template-areas:
+      'label value'
+      'track track';
+    row-gap: 6px;
+  }
+
+  .rowLabel {
+    grid-area: label;
+  }
+
+  .rowValue {
+    grid-area: value;
+  }
+
+  .track {
+    grid-area: track;
+  }
+}

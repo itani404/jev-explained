@@ -1,0 +1,116 @@
+.bench {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.claimRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.claim {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.claim p {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.claim strong {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-right: 4px;
+  color: var(--text-primary);
+}
+
+.claim strong.highlight {
+  color: var(--accent);
+}
+
+.claimed,
+.claimedPlain {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.claimed {
+  text-decoration: line-through;
+  text-decoration-color: var(--danger);
+}
+
+.benchGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.benchCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 200ms ease, translate 200ms ease;
+}
+
+.benchCard:hover {
+  border-color: var(--accent-soft);
+  translate: 0 -3px;
+}
+
+.benchCard h3 {
+  margin-top: 8px;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.benchStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.benchStats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--background);
+}
+
+.benchStats dt {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.benchStats dd {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.benchStats span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.benchNote {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}

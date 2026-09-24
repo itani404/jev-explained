@@ -1,0 +1,121 @@
+.typeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.typeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.typeCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-soft);
+}
+
+.typeTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.typeTop h3 {
+  font-size: 20px;
+}
+
+.returns {
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--track);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.typeCard > p {
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.miniBars {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--background);
+}
+
+.miniRow {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.miniTrack {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.miniFill,
+.miniFillOn {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--text-tertiary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 400ms;
+}
+
+:global(.is-visible) .miniFill,
+:global(.is-visible) .miniFillOn {
+  transform: scaleX(1);
+}
+
+.miniFillOn {
+  background: var(--accent);
+}
+
+.goodFor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin-top: auto;
+}
+
+.goodFor li {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .typeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .typeGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

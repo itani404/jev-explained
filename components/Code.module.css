@@ -1,0 +1,164 @@
+/* Editor stays dark in both page themes, like a real code editor would. */
+.editor {
+  --code-bg: #0f1117;
+  --code-chrome: #161922;
+  --code-border: #252a36;
+  --code-fg: #d4d7dd;
+  --code-muted: #4b5263;
+  --code-active: rgba(124, 147, 255, 0.14);
+  --code-active-edge: #7c93ff;
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  color: var(--code-fg);
+  overflow: hidden;
+  box-shadow: 0 12px 32px -18px rgba(0, 0, 0, 0.45);
+}
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 14px;
+  height: 42px;
+  background: var(--code-chrome);
+  border-bottom: 1px solid var(--code-border);
+}
+
+.dots {
+  display: flex;
+  gap: 7px;
+}
+
+.dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.dots span:nth-child(2) {
+  background: #febc2e;
+}
+
+.dots span:nth-child(3) {
+  background: #28c840;
+}
+
+.tab {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  margin-bottom: -1px;
+  border-inline: 1px solid var(--code-border);
+  border-top: 2px solid var(--code-active-edge);
+  background: var(--code-bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--code-fg);
+}
+
+.action {
+  margin-left: auto;
+}
+
+.actionButton {
+  padding: 5px 10px;
+  border: 1px solid var(--code-border);
+  border-radius: 7px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: #a9b8ff;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.actionButton:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #3a4152;
+}
+
+.body {
+  flex: 1;
+  padding: 14px 0;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.inner {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  font: inherit;
+}
+
+.line {
+  display: flex;
+  padding-right: 20px;
+  border-left: 2px solid transparent;
+  transition: opacity 250ms ease, background 250ms ease, border-color 250ms ease;
+}
+
+.lineNo {
+  flex-shrink: 0;
+  width: 44px;
+  padding-right: 16px;
+  text-align: right;
+  color: var(--code-muted);
+  user-select: none;
+}
+
+.lineText {
+  white-space: pre;
+}
+
+/* States used by the "How it works" walkthrough */
+.lineActive {
+  background: var(--code-active);
+  border-left-color: var(--code-active-edge);
+}
+
+.lineActive .lineNo {
+  color: var(--code-fg);
+}
+
+.lineDim {
+  opacity: 0.35;
+}
+
+/* Token colors */
+.comment {
+  color: #6a7394;
+  font-style: italic;
+}
+
+.string {
+  color: #c3e88d;
+}
+
+.keyword {
+  color: #c792ea;
+}
+
+.number {
+  color: #f78c6c;
+}
+
+.property {
+  color: #82aaff;
+}
+
+.function {
+  color: #ffcb6b;
+}
+
+.punct {
+  color: #89ddff;
+}

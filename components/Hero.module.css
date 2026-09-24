@@ -1,0 +1,153 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 56px;
+  padding: 96px 0 80px;
+}
+
+.heroCopy > * {
+  animation: heroIn 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.heroCopy > :nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.heroCopy > :nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.heroCopy > :nth-child(4) {
+  animation-delay: 240ms;
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.facts > div {
+  animation: heroIn 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.facts > div:nth-child(1) {
+  animation-delay: 400ms;
+}
+
+.facts > div:nth-child(2) {
+  animation-delay: 470ms;
+}
+
+.facts > div:nth-child(3) {
+  animation-delay: 540ms;
+}
+
+.facts > div:nth-child(4) {
+  animation-delay: 610ms;
+}
+
+.pill {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.hero h1 {
+  margin: 22px 0 18px;
+  font-size: clamp(38px, 5.2vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.lead {
+  max-width: 640px;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.facts > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 132px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 200ms ease, translate 200ms ease;
+}
+
+.facts > div:hover {
+  border-color: var(--accent-soft);
+  translate: 0 -2px;
+}
+
+.facts dt {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.facts dd {
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    padding: 64px 0 56px;
+  }
+
+  .facts > div {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 44px 0;
+  }
+
+  .lead {
+    font-size: 17px;
+  }
+
+  .heroActions > a {
+    flex: 1;
+  }
+
+  .facts > div {
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .facts dt {
+    font-size: 20px;
+  }
+}

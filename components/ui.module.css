@@ -1,0 +1,72 @@
+.mono {
+  font-family: var(--font-mono);
+}
+
+.accentText {
+  color: var(--accent);
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.note {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.primary,
+.secondary,
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: opacity 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+
+.primary {
+  padding: 12px 20px;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.primary:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.primary:disabled {
+  opacity: 0.5;
+}
+
+.secondary {
+  padding: 11px 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.secondary:hover {
+  border-color: var(--text-tertiary);
+}
+
+.ghost {
+  align-self: flex-start;
+  padding: 6px 0;
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: var(--accent);
+}
+
+.ghost:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,98 @@
+.calc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+}
+
+.calcInputs,
+.calcOutput {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.calcOutput {
+  justify-content: center;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sliderHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.slider input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.costRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.costHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.costTrack {
+  height: 14px;
+  border-radius: 999px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.costFill,
+.costFillMuted {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 300ms ease;
+}
+
+.costFill {
+  background: var(--accent);
+}
+
+.costFillMuted {
+  background: var(--text-tertiary);
+}
+
+.ratio {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.ratio span {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-right: 6px;
+}
+
+@media (max-width: 900px) {
+  .calc {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.inlineLink {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

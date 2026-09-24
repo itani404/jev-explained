@@ -1,0 +1,45 @@
+{
+  "name": "jev-explained",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A hands-on look at TypeSafe AI's Jev decision model, with runnable examples and a benchmark.",
+  "author": "itani404 (https://github.com/itani404)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itani404/jev-explained.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "example:choice": "tsx scripts/examples/choice.ts",
+    "example:score": "tsx scripts/examples/score.ts",
+    "example:boolean": "tsx scripts/examples/boolean.ts",
+    "example:low-confidence": "tsx scripts/examples/low-confidence.ts",
+    "benchmark": "tsx scripts/benchmark.ts"
+  },
+  "dependencies": {
+    "ai": "^7.0.113",
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^18.0.3",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}

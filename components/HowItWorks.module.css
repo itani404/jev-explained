@@ -1,0 +1,78 @@
+.how {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.steps li {
+  flex: 1;
+  display: flex;
+}
+
+.step,
+.stepActive {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: left;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.step:hover {
+  border-color: var(--text-tertiary);
+}
+
+.stepActive {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.stepNum {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--track);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stepActive .stepNum {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.stepTitle {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.stepBody {
+  display: block;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .how {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
