@@ -17,7 +17,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "example:choice": "tsx scripts/examples/choice.ts",
     "example:score": "tsx scripts/examples/score.ts",
